@@ -17,19 +17,29 @@ header {
     top: 0;
     width: 100%;
     z-index: 10;
+    height: 130px;
 }
 
-/* LOGGA */
+/* LOGGA I VIT BOX – SAMMA BOXSTORLEK */
 .logo-box {
+    background: #fff;
+    padding: 10px 16px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 100px;      /* oförändrad */
+    width: 140px;       /* oförändrad */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
+/* 40% större logga */
 .logo-box img {
-    height: 55px;
+    max-height: 100px;   /* styr loggans faktiska storlek */
     width: auto;
     object-fit: contain;
-    display: block;
+    border-radius: 12px;
 }
 
 /* NAVIGATION */
