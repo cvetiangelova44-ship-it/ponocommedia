@@ -11,16 +11,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 8%;
+    padding: 0 8%;
     background: #000;
     position: fixed;
     top: 0;
     width: 100%;
+    height: 110px; /* svart kant når ner till färggradienten */
     z-index: 10;
-    height: 130px;
 }
 
-/* LOGGA I VIT BOX – SAMMA BOXSTORLEK */
+/* LOGGA I VIT BOX – SAMMA YTTRE STORLEK */
 .logo-box {
     background: #fff;
     padding: 10px 16px;
@@ -28,19 +28,48 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;      /* oförändrad */
-    width: 140px;       /* oförändrad */
+    height: 100px;   /* behåll rutan */
+    width: 140px;    /* behåll rutan */
     box-shadow: 0 4px 14px rgba(0,0,0,0.15);
     cursor: pointer;
 }
 
-/* 40% större logga */
+/* STÖRRE LOGGA INUTI RUTAN (utan att rutan växer) */
 .logo-box img {
-    max-height: 100px;   /* styr loggans faktiska storlek */
+    height: 85px;     /* större logga */
     width: auto;
     object-fit: contain;
-    border-radius: 12px;
+    display: block;
 }
+
+/* NAVIGATION – SOM PÅ BILDEN */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px; /* mer luft mellan länkarna */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px; /* större text som på bilden */
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* KONTAKT-KNAPPEN */
+nav .cta {
+    padding: 10px 22px;
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
 
 /* NAVIGATION */
 nav a {
