@@ -16,7 +16,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 110px; /* svart kant når ner till färggradienten */
+    height: 120px; /* möter hero exakt */
     z-index: 10;
 }
 
@@ -34,25 +34,25 @@ header {
     cursor: pointer;
 }
 
-/* STÖRRE LOGGA INUTI RUTAN (utan att rutan växer) */
+/* STÖRRE LOGGA INUTI RUTAN – FYLLER MAX */
 .logo-box img {
-    height: 85px;     /* större logga */
+    height: 100%;     /* fyller hela rutan */
     width: auto;
     object-fit: contain;
     display: block;
 }
 
-/* NAVIGATION – SOM PÅ BILDEN */
+/* NAVIGATION – SOM PÅ REFERENSBILDEN */
 nav {
     display: flex;
     align-items: center;
-    gap: 32px; /* mer luft mellan länkarna */
+    gap: 32px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    font-size: 20px; /* större text som på bilden */
+    font-size: 20px;
     font-weight: 500;
     transition: 0.2s;
 }
@@ -86,7 +86,7 @@ nav .cta {
     border-radius: 8px;
 }
 
-/* HERO MED CMYK-BAKGRUND */ .hero { height: 35vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; margin-top: 130px; background: linear-gradient(120deg, #ff00ff, #00ffff, #ffff00, #ff00ff ); background-size: 400% 400%; animation: cmykLoop 12s ease-in-out infinite; }
+/* HERO MED CMYK-BAKGRUND */ .hero { height: 35vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; margin-top: 120px; background: linear-gradient(120deg, #ff00ff, #00ffff, #ffff00, #ff00ff ); background-size: 400% 400%; animation: cmykLoop 12s ease-in-out infinite; }
 /* SAMMA STIL FÖR ALLA ANDRA SIDOR */
 .sub-hero,
 .contact-hero {
@@ -96,7 +96,7 @@ nav .cta {
     justify-content: center;
     text-align: center;
     position: relative;
-    margin-top: 130px;
+    margin-top: 120px;
 
     background: linear-gradient(120deg,
         #ff00ff,
