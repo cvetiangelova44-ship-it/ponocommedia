@@ -3,64 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tack!</title>
+    <title>Tack – Poncom Media AB</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #ff00ff, #00ffff, #00ff90);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-family: Arial, sans-serif;
+        .thankyou-container {
+            max-width: 700px;
+            margin: 120px auto;
             text-align: center;
+            padding: 40px;
         }
 
-        .thankyou-box {
-            background: rgba(0, 0, 0, 0.55);
-            padding: 50px 40px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-        }
-
-        .thankyou-box h1 {
-            font-size: 48px;
+        .thankyou-container h1 {
+            font-size: 42px;
             margin-bottom: 20px;
         }
 
-        .thankyou-box p {
+        .thankyou-container p {
             font-size: 20px;
             margin-bottom: 40px;
         }
 
         .cta-button {
-            background: #fff;
-            color: #000;
+            display: inline-block;
             padding: 14px 28px;
-            border-radius: 10px;
+            background: black;
+            color: white;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .cta-button:hover {
-            background: #000;
-            color: #fff;
+            font-size: 18px;
         }
     </style>
 </head>
-
 <body>
 
-    <div class="thankyou-box">
-        <h1>Tack!</h1>
-        <p>Ditt meddelande har skickats. Vi återkommer så snart vi kan.</p>
+    <div class="thankyou-container">
+        <h1>Tack för ditt meddelande!</h1>
+        <p>Vi återkommer till dig så snart som möjligt.</p>
         <a href="index.html" class="cta-button">Tillbaka till startsidan</a>
     </div>
 
