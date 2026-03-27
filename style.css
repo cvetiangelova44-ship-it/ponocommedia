@@ -28,8 +28,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;   /* behåll rutan */
-    width: 110px;    /* behåll rutan */
+    height: 100px;   /* behåll rutan */
+    width: 140px;    /* behåll rutan */
     box-shadow: 0 4px 14px rgba(0,0,0,0.15);
     cursor: pointer;
 }
