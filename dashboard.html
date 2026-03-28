@@ -20,17 +20,27 @@
         /* Header */
         header {
             background: #000;
-            padding: 25px 0;
-            text-align: center;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.25);
         }
 
+        /* Rundad logga */
         header img {
-            width: 170px;
-            filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+            height: 55px;
+            border-radius: 14px; /* rundade hörn */
         }
 
-        /* Dashboard wrapper */
+        /* Användarnamn i högra hörnet */
+        .user-display {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
         .dashboard-wrapper {
             flex: 1;
             padding: 50px 20px;
@@ -46,14 +56,12 @@
             letter-spacing: 0.5px;
         }
 
-        /* Grid */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
-        /* Cards */
         .card {
             background: #fff;
             padding: 35px 25px;
@@ -97,7 +105,6 @@
             background: #333;
         }
 
-        /* Footer */
         footer {
             background: #000;
             color: #fff;
@@ -112,6 +119,7 @@
 
 <header>
     <img src="logo.png" alt="Ponocom Media AB logotyp">
+    <div class="user-display" id="user-display">Inloggad som: —</div>
 </header>
 
 <div class="dashboard-wrapper">
@@ -151,6 +159,13 @@
 </footer>
 
 <script>
+    // Hämta användarnamnet från inloggningssidan
+    const loggedInUser = localStorage.getItem("ponocom_user");
+
+    if (loggedInUser) {
+        document.getElementById("user-display").textContent = "Inloggad som: " + loggedInUser;
+    }
+
     // När du får den riktiga CRM‑URL:en, lägg in den här:
     const REAL_CRM_URL = "https://din-crm-url-här.se";
 
