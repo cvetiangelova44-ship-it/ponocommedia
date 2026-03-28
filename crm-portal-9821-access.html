@@ -75,6 +75,12 @@
             background: #333;
         }
 
+        #login-error {
+            color: #ff4d4d;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
         /* Footer */
         footer {
             background: #000;
@@ -95,10 +101,11 @@
         <div class="login-container">
             <h2>CRM – Inloggning</h2>
 
-            <form>
-                <input type="email" placeholder="E‑postadress" required>
-                <input type="password" placeholder="Lösenord" required>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Användarnamn" required>
+                <input type="password" id="password" placeholder="Lösenord" required>
                 <button type="submit">Logga in</button>
+                <p id="login-error"></p>
             </form>
         </div>
     </div>
@@ -106,6 +113,34 @@
     <footer>
         © 2026 Ponocom Media AB – Intern CRM‑portal
     </footer>
+
+    <script>
+        // Tillåtna användare
+        const users = {
+            "Admin": "Dan4ev",
+            "F.Nox": "Kyrkavgift!",
+            "Za Print": "Zlatomir"
+        };
+
+        // TODO: Byt till den riktiga CRM-URL:en när du får den
+        const CRM_URL = "https://din-crm-url-här.se";
+
+        document.getElementById("login-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const errorEl = document.getElementById("login-error");
+
+            if (users[username] && users[username] === password) {
+                // Rätt inloggning → vidare till CRM
+                window.location.href = CRM_URL;
+            } else {
+                // Fel inloggning
+                errorEl.textContent = "Fel användarnamn eller lösenord.";
+            }
+        });
+    </script>
 
 </body>
 </html>
