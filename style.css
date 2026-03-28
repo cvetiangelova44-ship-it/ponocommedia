@@ -787,3 +787,98 @@ nav .cta {
         grid-template-columns: 1fr;
     }
 }
+/* ============================
+   MOBILOPTIMERING PÅ RIKTIGT
+   ============================ */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        height: 80px;
+        padding: 0 20px;
+    }
+
+    .logo-box {
+        height: 60px;
+        width: 100px;
+        padding: 6px 10px;
+        border-radius: 12px;
+    }
+
+    .logo-box img {
+        height: 100%;
+    }
+
+    /* Dölj desktop-menyn på mobil */
+    nav {
+        display: none;
+    }
+
+    /* HERO */
+    .hero,
+    .sub-hero,
+    .contact-hero {
+        height: 45vh;
+        margin-top: 80px;
+        padding: 0 20px;
+    }
+
+    .hero-content h1,
+    .contact-hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p,
+    .contact-hero p {
+        font-size: 16px;
+    }
+
+    /* INTRO GRID – från 4 kolumner → 1 kolumn */
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .intro-box {
+        padding: 20px;
+    }
+
+    /* SERVICES, REFERENCES, ABOUT – 2 kolumner → 1 kolumn */
+    .services-grid,
+    .references-grid,
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* CONTACT GRID – 2 kolumner → 1 kolumn */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* TEXTSTORLEKAR */
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    .service-box h3,
+    .reference-box h3,
+    .about-text h2 {
+        font-size: 22px;
+    }
+
+    .service-box p,
+    .reference-box p,
+    .about-text p {
+        font-size: 15px;
+    }
+
+    /* FOOTER */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
