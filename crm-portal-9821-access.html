@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ponocom CRM – Inloggning</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
             background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 50%, #ffffff 100%);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Header utan meny */
         header {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
 
+        /* Rundad logga */
         header img {
-            width: 160px;
+            width: 170px;
+            border-radius: 14px;
+            filter: drop-shadow(0 0 6px rgba(0,0,0,0.15));
         }
 
-        /* Login-box */
         .login-wrapper {
             flex: 1;
             display: flex;
@@ -39,15 +39,17 @@
         .login-container {
             background: #fff;
             padding: 40px;
-            width: 350px;
-            border-radius: 14px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+            width: 360px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             text-align: center;
+            border: 1px solid #e6e6e6;
         }
 
         .login-container h2 {
             margin-bottom: 25px;
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: 600;
             color: #000;
         }
 
@@ -69,6 +71,7 @@
             border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
+            font-weight: 500;
         }
 
         .login-container button:hover {
@@ -81,7 +84,6 @@
             min-height: 20px;
         }
 
-        /* Footer */
         footer {
             background: #000;
             color: #fff;
@@ -93,54 +95,55 @@
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Ponocom Media AB logotyp">
-    </header>
+<header>
+    <img src="logo.png" alt="Ponocom Media AB logotyp">
+</header>
 
-    <div class="login-wrapper">
-        <div class="login-container">
-            <h2>CRM – Inloggning</h2>
+<div class="login-wrapper">
+    <div class="login-container">
+        <h2>CRM – Inloggning</h2>
 
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Användarnamn" required>
-                <input type="password" id="password" placeholder="Lösenord" required>
-                <button type="submit">Logga in</button>
-                <p id="login-error"></p>
-            </form>
-        </div>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Användarnamn" required>
+            <input type="password" id="password" placeholder="Lösenord" required>
+            <button type="submit">Logga in</button>
+            <p id="login-error"></p>
+        </form>
     </div>
+</div>
 
-    <footer>
-        © 2026 Ponocom Media AB – Intern CRM‑portal
-    </footer>
+<footer>
+    © 2026 Ponocom Media AB – Intern CRM‑portal
+</footer>
 
-    <script>
-        // Tillåtna användare
-        const users = {
-            "Admin": "Dan4ev",
-            "F.Nox": "Kyrkavgift!",
-            "Za Print": "Zlatomir"
-        };
+<script>
+    // Tillåtna användare
+    const users = {
+        "Admin": "Dan4ev",
+        "F.Nox": "Kyrkavgift!",
+        "Za Print": "Zlatomir"
+    };
 
-        // TODO: Byt till den riktiga CRM-URL:en när du får den
-        const CRM_URL = "https://din-crm-url-här.se";
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        document.getElementById("login-form").addEventListener("submit", function (e) {
-            e.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const errorEl = document.getElementById("login-error");
 
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value;
-            const errorEl = document.getElementById("login-error");
+        if (users[username] && users[username] === password) {
 
-            if (users[username] && users[username] === password) {
-                // Rätt inloggning → vidare till CRM
-                window.location.href = "dashboard.html";
-            } else {
-                // Fel inloggning
-                errorEl.textContent = "Fel användarnamn eller lösenord.";
-            }
-        });
-    </script>
+            // Spara användarnamnet så dashboarden kan visa det
+            localStorage.setItem("ponocom_user", username);
+
+            // Skicka vidare till dashboard
+            window.location.href = "dashboard.html";
+
+        } else {
+            errorEl.textContent = "Fel användarnamn eller lösenord.";
+        }
+    });
+</script>
 
 </body>
 </html>
