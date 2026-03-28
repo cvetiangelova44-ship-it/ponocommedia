@@ -134,7 +134,7 @@
 
             if (users[username] && users[username] === password) {
                 // Rätt inloggning → vidare till CRM
-                window.location.href = CRM_URL;
+                window.location.href = "dashboard.html";
             } else {
                 // Fel inloggning
                 errorEl.textContent = "Fel användarnamn eller lösenord.";
